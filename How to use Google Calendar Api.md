@@ -21,7 +21,7 @@ And after removing the old one i tried to add new library as a pod by using coco
 #### Important Note: Make sure to add right pod name into the Podfile
 If you search pod name [like this](https://cocoapods.org/?q=google%20api%20client) in search bar of cocoapods website, you will see two results as `Google-API-Client` and `GoogleAPIClient`. Be careful, right one is `GoogleAPIClient`.  
 
-![Right pod name](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-13 at 00.13.30.png)
+![Right pod name](./Images/Screen Shot 2016-04-13 at 00.13.30.png)
 
 So the right line for your podfile should be;  
 **`pod 'GoogleAPIClient'`**
@@ -44,11 +44,11 @@ So, my final podfile looks like;
 ## Error i got due to flags remained from GData library 
 After installing pod libraries in my podfile shown above, i encountered a weird problem. I imported **GTMOAuth2ViewControllerTouch.h** which is included in the **GTMOAuth2**.  
 
-![Import statement](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-14 at 17.09.58.png)  
+![Import statement](./Images/Screen Shot 2016-04-14 at 17.09.58.png)  
 
 Although XCode does not complain for this import, whenever i tried to use any method of GTMOAuth2ViewControllerTouch class i got `use of undeclared identifier` error like below.
 
-![Use of undeclared identifier](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-14 at 17.03.42.png)
+![Use of undeclared identifier](./Images/Screen Shot 2016-04-14 at 17.03.42.png)
 
 The cause of this was these two flags, remained from old GData library which i removed before, in project settings.
 
@@ -68,38 +68,38 @@ Before using google calendar api, we need to make some configuration from google
 After opening [developer console](https://console.developers.google.com) if you don't already have one, you will need to create a new project using the panel at the right top of page.
 
 **Create or select a project**  
-![Google Right top panel](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 01.05.31.png)  
+![Google Right top panel](./Images/Screen Shot 2016-04-17 at 01.05.31.png)  
 
 If you selected create a new project, you will required to select a name for the project, i chose `Google Calendar Sample App`.  
 
 **Select a name**  
-![Google Select a name for the project](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 01.19.38.png)  
+![Google Select a name for the project](./Images/Screen Shot 2016-04-17 at 01.19.38.png)  
 
 **Enter Product name**
-![Google product name](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 01.34.06.png)  
+![Google product name](./Images/Screen Shot 2016-04-17 at 01.34.06.png)  
 
 **Select Client ID**
-![Google credential selection](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 01.44.27.png)  
+![Google credential selection](./Images/Screen Shot 2016-04-17 at 01.44.27.png)  
 
 **Enter a bundle ID**  
-![Google bundle id](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 01.46.57.png)  
+![Google bundle id](./Images/Screen Shot 2016-04-17 at 01.46.57.png)  
 
 Finally you will be promted with the client ID.  
 **Get Client ID**  
-![Google client id](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 01.47.14.png)
+![Google client id](./Images/Screen Shot 2016-04-17 at 01.47.14.png)
 
 #### Important Note: Make sure to enable Google Calendar API from the console.
 
-![Google enable Calendar API 1](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 17.15.56.png)
+![Google enable Calendar API 1](./Images/Screen Shot 2016-04-17 at 17.15.56.png)
 
-![Google enable Calendar API 2](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 17.16.01.png)
+![Google enable Calendar API 2](./Images/Screen Shot 2016-04-17 at 17.16.01.png)
 
 ## Eventbrite configuration
 I used eventbrite's api to show some random events in sample application, to use its api you will need a OAuth token which is sent within requests to api as a parameter for authentication.
 
 [Here](http://www.eventbrite.com/myaccount/apps/) you can access the app management page in developer portal of eventbrite. **Your personal OAuth token** is what you need to make sample app work.
 
-![Eventbrite OAuth token](/Users/Eray/Desktop/Blog post/Screen Shot 2016-04-17 at 15.00.14.png)
+![Eventbrite OAuth token](./Images/Screen Shot 2016-04-17 at 15.00.14.png)
 
 ## Sample App
 After you get your `google api client id` and `eventbrite oauth token` then just assign them to `kGoogleAPIClientID` and `kEventbriteAuthToken` in the code.
